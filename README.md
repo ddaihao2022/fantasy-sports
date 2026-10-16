@@ -29,10 +29,11 @@ drift canary. Every command's output, in every mode, is in the
 where `lineup set` changes your own team's lineup and `journal reverse` undoes
 it, and the irreversible kind: `add`, `drop`, and `claim`, each behind an
 acknowledgement flag, with `claims` and `cancel-claim` to manage the waiver
-queue (see [Writing](#writing)). Every write is journaled before it is sent
-and read back after. Trades are not built; they and the executing add and
-drop probes are tracked in the [write-surface
-epic](https://github.com/jwulff/fantasy-sports/issues/105).
+queue, and `trade propose` behind the same flag, with `trades` and `trade
+cancel` to see and withdraw offers (see [Writing](#writing)). Every write is
+journaled before it is sent and read back after. Accepting and declining a
+trade offer (#142) and the executing add and drop probes are tracked in the
+[write-surface epic](https://github.com/jwulff/fantasy-sports/issues/105).
 The package is not on PyPI (`0.1.0.dev0`); install from git as below.
 
 ## Install
@@ -195,6 +196,9 @@ fails if a committed sample no longer matches what the code renders.
 | [`claim`](docs/commands.md#claim) | Submit a waiver claim, optionally with a bid and a drop. Irreversible; needs `--acknowledge-irreversible`. **Writes** |
 | [`claims`](docs/commands.md#claims) | A team's pending waiver claims by id, from ESPN's queue |
 | [`cancel-claim`](docs/commands.md#cancel-claim) | Withdraw a pending claim before it processes. **Writes** |
+| [`trades`](docs/commands.md#trades) | A team's open trade proposals, made and received, by id, from ESPN's queue |
+| [`trade propose`](docs/commands.md#trade-propose) | Offer your players for another team's. Irreversible; needs `--acknowledge-irreversible`. **Writes** |
+| [`trade cancel`](docs/commands.md#trade-cancel) | Withdraw one of your own open trade proposals. **Writes** |
 | [`journal list`](docs/commands.md#journal-list) | The mutation journal, newest first: each write, who made it, how it ended |
 | [`journal digest`](docs/commands.md#journal-digest) | Journal entries since a time, newest first, for a cron job or agent to report |
 | [`journal show`](docs/commands.md#journal-show) | One journal entry in full: prior and applied state, acting member, cost |
@@ -480,9 +484,9 @@ Every field this loop reads is shown in the [command reference](docs/commands.md
 
 ## Writing
 
-Six commands change a league: `lineup set`, `add`, `drop`, `claim`,
-`cancel-claim`, and `journal reverse`. `claims` and the other `journal`
-commands only read. They are built to be run by an agent with nobody watching, so
+Eight commands change a league: `lineup set`, `add`, `drop`, `claim`,
+`cancel-claim`, `trade propose`, `trade cancel`, and `journal reverse`.
+`claims`, `trades`, and the other `journal` commands only read. They are built to be run by an agent with nobody watching, so
 there is no confirmation prompt and no dry-run default. What makes that safe
 is the shape of every loop: read, preview, write, then read it back. The
 irreversible ones add one step. The design is in
@@ -542,16 +546,16 @@ fantasy-sports journal reverse --id JOURNAL_ENTRY_ID
 - **A lineup change can be reversed until kickoff.** `journal reverse --id`
   sends every player back to the slot the entry recorded, through the same
   checks, and journals the reversal. It is the only reversal there is: an
-  `add`, `drop`, `claim`, or `cancel-claim` entry is `NOT_AVAILABLE`, with
-  nothing sent.
+  `add`, `drop`, `claim`, `cancel-claim`, `trade`, or `trade_cancel` entry is
+  `NOT_AVAILABLE`, with nothing sent.
 
-### Irreversible writes: `add`, `drop`, `claim`
+### Irreversible writes: `add`, `drop`, `claim`, `trade propose`
 
 A dropped player can be claimed by another team within seconds. A processed
 waiver claim spends priority and FAAB that restoring the roster does not give
-back. An add that needs a drop inherits the drop's irreversibility. Nothing
-this tool does can undo any of them, so these three commands add one step to
-the loop, and an agent running them unattended follows it every time:
+back. An add that needs a drop inherits the drop's irreversibility. A trade
+offer can be accepted the moment it lands. Nothing this tool does can undo any
+of them, so these four commands add one step to the loop, and an agent running them unattended follows it every time:
 
 ```bash
 # 1. Read. 2. Preview: items, cost, and exactly what cannot be undone.
@@ -563,7 +567,7 @@ fantasy-sports add --team "My Team" --player "Player C" --drop "Player A" --ackn
 ```
 
 - **No flag, no write.** Without `--acknowledge-irreversible "<why>"`, `add`,
-  `drop`, and `claim` stop with `CONFIG_INVALID` and say what this move would
+  `drop`, `claim`, and `trade propose` stop with `CONFIG_INVALID` and say what this move would
   lose: the dropped player goes to waivers, the claim spends priority and
   FAAB. A blank reason counts as missing. The reason is journaled verbatim and
   echoed as `acknowledged_irreversible`, so a write nobody justified cannot
@@ -624,6 +628,33 @@ fantasy-sports cancel-claim --team "My Team" --id CLAIM_ID
   from the queue.
 - **Editing a bid is cancel, then claim again.** There is no edit in place.
 
+### The trade lifecycle: `trade propose`, `trades`, `trade cancel`
+
+A trade offer waits in ESPN's queue until the other manager answers it, you
+withdraw it, or it expires:
+
+```bash
+# Preview, then offer. The answer carries provider_transaction_id, the offer's id.
+fantasy-sports trade propose --team "My Team" --with "Their Team" --give "Player A" --get "Player E" --dry-run
+fantasy-sports trade propose --team "My Team" --with "Their Team" --give "Player A" --get "Player E" --acknowledge-irreversible "E fills our RB hole; gate PROCEED"
+# See open offers, made and received, by id.
+fantasy-sports trades --team "My Team"
+# Withdraw your own offer before it is answered.
+fantasy-sports trade cancel --team "My Team" --id TRADE_ID
+```
+
+- **An offer is irreversible.** The other manager can accept it at once, and
+  an accepted trade goes to the league's review window, out of the tool's
+  reach. `trade propose` follows the irreversible loop above.
+- **`trades` reads from your side.** It lists offers you made; offers made
+  to you should appear as `incoming`, but that has not been captured from
+  ESPN yet (#142), so check the app before assuming there are none.
+  `direction` is `outgoing` or `incoming`,
+  `other_team_id` is the team on the other side, and `giving` and `receiving`
+  name the players that would leave and join your team.
+- **Only your own offers can be cancelled.** Accepting or declining an offer
+  made to you is not built yet (#142).
+
 ### The journal
 
 Every write attempt that gets past the preflight is one row in
@@ -644,8 +675,8 @@ pseudonym, never the SWID.
 
 ### Being told about irreversible writes
 
-An add, a drop, or a claim cannot be undone by the tool, so you should not have
-to remember to look for one. Two pieces make that automatic, and neither knows
+An add, a drop, a claim, or a trade offer cannot be undone by the tool, so you
+should not have to remember to look for one. Two pieces make that automatic, and neither knows
 where the news ends up.
 
 **Push.** Point `config.toml` at a command. The tool runs it once per
