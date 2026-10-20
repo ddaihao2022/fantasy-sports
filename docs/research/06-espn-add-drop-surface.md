@@ -158,7 +158,18 @@ was empty right after its cancel (p7c-r). So the queue is
 `mPendingTransactions`, or `mTransactions2` folded by `relatedTransactionId`.
 A plain `isPending` filter reports withdrawn claims as live.
 `docs/memory/a-cancelled-claim-still-reads-pending.md` records this. How a
-*processed* claim's row reads was not observed.
+*processed* claim's row reads was not observed in this probe; the addendum
+below records it.
+
+**Addendum, 2026-10-18 (#144).** The empty-queue reads above went through
+`.get("pendingTransactions")`, so they do not show whether the key was
+present. The trade probe's `t2-pending.json` does show this league sending
+`pendingTransactions: []`. Three private leagues read the same day answer
+the empty state with **no key at all**
+(`pending-transactions-omitted.json`), under every request variant tried,
+and their logs show a processed claim's own row reading `PENDING` beside a
+`PROCESS` row naming it, the same way a cancelled one does.
+`docs/memory/espn-omits-an-empty-pending-queue.md` has the full account.
 
 ## 3. Item-shape rules, one variation at a time
 
