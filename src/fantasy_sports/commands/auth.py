@@ -43,7 +43,7 @@ from fantasy_sports.commands.context import require_shape
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from fantasy_sports.output.envelope import Envelope
 
-__all__ = ["login", "logout", "status"]
+__all__ = ["bookmarklet", "login", "logout", "status"]
 
 PROVIDER = "espn"
 """The only provider v0.1 ships. ``auth`` is not league-scoped, so there is no
@@ -74,11 +74,19 @@ def status() -> Envelope:
     return Envelope.success(provider=PROVIDER, data=data)
 
 
-def login(*, from_browser: str | None = None, profile: str | None = None) -> Envelope:
-    """Store ESPN's two cookies in the Keychain: prompted for, or read from a browser.
+def login(
+    *,
+    from_browser: str | None = None,
+    profile: str | None = None,
+    from_clipboard: bool = False,
+) -> Envelope:
+    """Store ESPN's two cookies in the Keychain: prompted for, or imported.
 
     With ``from_browser`` the cookies are read from a local browser profile
-    (:func:`_login_from_browser`) and the prompt is never shown. Without it:
+    (:func:`_login_from_browser`) and the prompt is never shown. With
+    ``from_clipboard`` they are read from the clipboard, where the bookmarklet
+    from ``auth bookmarklet`` put them (:func:`_login_from_clipboard`); the two
+    flags are mutually exclusive. Without either:
 
     Prompt for ESPN's two cookies and store them in the Keychain.
 
@@ -99,6 +107,12 @@ def login(*, from_browser: str | None = None, profile: str | None = None) -> Env
     from fantasy_sports.core.errors import AuthMissingError, ConfigInvalidError
     from fantasy_sports.output.envelope import Envelope
 
+    if from_browser is not None and from_clipboard:
+        raise ConfigInvalidError(
+            "--from-clipboard and --from-browser are mutually exclusive.",
+            kind="argument",
+            remediation="Pass one of them, or neither to be prompted for the cookies.",
+        )
     if from_browser is not None:
         return _login_from_browser(from_browser, profile)
     if profile is not None:
@@ -107,6 +121,9 @@ def login(*, from_browser: str | None = None, profile: str | None = None) -> Env
             kind="argument",
             remediation="Add --from-browser, or drop --profile to be prompted for the cookies.",
         )
+
+    if from_clipboard:
+        return _login_from_clipboard()
 
     values: dict[str, str] = {}
     for spec in ALL_CREDENTIALS:
@@ -192,6 +209,110 @@ def _login_from_browser(from_browser: str, profile: str | None) -> Envelope:
         "skipped": list(search.skipped),
     }
     require_shape(data, command="auth login")
+    return Envelope.success(provider=PROVIDER, data=data)
+
+
+def _login_from_clipboard() -> Envelope:
+    """Import the cookie pair from the clipboard, store it, and clear the clipboard.
+
+    The clipboard is cleared once it is known to hold a valid cookie pair, even if
+    storing then fails; when it does not, it may hold something that is not ours
+    to wipe and is left alone. Clearing is best effort and its outcome is
+    reported as ``clipboard_cleared``. No clipboard text appears in
+    any error or in ``data``.
+    """
+    from fantasy_sports.auth import clipboard
+    from fantasy_sports.auth.chain import ALL_CREDENTIALS, save_credentials
+    from fantasy_sports.core.errors import AuthMissingError, ConfigInvalidError
+    from fantasy_sports.output.envelope import Envelope
+
+    bookmarklet_hint = (
+        "Run `fantasy-sports auth bookmarklet`, add the printed URL as a bookmark, click it on "
+        "fantasy.espn.com while logged in, then run `auth login --from-clipboard` again."
+    )
+    try:
+        text, source = clipboard.read_clipboard_from()
+    except clipboard.ClipboardError as problem:
+        raise AuthMissingError(
+            f"Could not read the clipboard ({problem.reason}). Nothing was stored.",
+            remediation="Install pbpaste, wl-paste or xclip (or use Windows PowerShell), or run "
+            "`fantasy-sports auth login` to paste the cookies instead.",
+            details={"reason": problem.reason},
+        ) from None
+
+    found = clipboard.parse_cookies(text)
+    if "swid" in found and "espn_s2" not in found:
+        raise AuthMissingError(
+            "The clipboard holds SWID but not espn_s2. Nothing was stored.",
+            remediation="This browser may hide espn_s2 from page scripts (HttpOnly), so the "
+            "bookmarklet cannot copy it. Run `fantasy-sports auth login --from-browser`, or "
+            "copy espn_s2 from DevTools > Application > Cookies and run "
+            "`fantasy-sports auth login`.",
+            details={"reason": "espn_s2_missing"},
+        )
+    if "espn_s2" not in found or "swid" not in found:
+        raise AuthMissingError(
+            "The clipboard does not hold both ESPN cookies (espn_s2 and SWID). Nothing was stored.",
+            remediation=bookmarklet_hint,
+            details={"reason": "no_cookies_on_clipboard"},
+        )
+
+    if not clipboard.cookies_are_valid(found):
+        raise AuthMissingError(
+            "The clipboard holds espn_s2 and SWID, but a value is not a valid cookie "
+            "(SWID must be a GUID). Nothing was stored.",
+            remediation=bookmarklet_hint,
+            details={"reason": "invalid_cookie_value"},
+        )
+
+    # The clipboard held a valid credential pair, so it is ours to clear whether or
+    # not the store below succeeds: a failure after the Keychain write (the
+    # bookkeeping file) must not leave the cookies behind. A storage failure is
+    # turned into a data-free error *outside* the handler: ``save_credentials``'
+    # frame holds the plain values, and it would otherwise ride the traceback
+    # (docs/memory/credential-leak-channels.md).
+    failed: str | None = None
+    repaired: tuple[str, ...] = ()
+    try:
+        repaired = save_credentials(
+            {"espn_s2": found["espn_s2"].reveal(), "swid": found["swid"].reveal()},
+            specs=ALL_CREDENTIALS,
+        )
+    except Exception as problem:  # noqa: BLE001 - re-raised below without its frames
+        failed = type(problem).__name__
+    cleared = clipboard.clear_clipboard(source=source)
+    if failed is not None:
+        raise ConfigInvalidError(
+            f"Could not store the credentials ({failed}); the clipboard was "
+            f"{'cleared' if cleared else 'NOT cleared'}.",
+            kind="credential_store",
+            remediation="Unlock the Keychain or fix the file the cause names, click the "
+            "bookmarklet again, and re-run `fantasy-sports auth login --from-clipboard`.",
+            details={"cause": failed, "clipboard_cleared": cleared},
+        )
+    data = {
+        "stored": ["espn_s2", "swid"],
+        "repaired": sorted(repaired),
+        "keychain_service": _service(),
+        "source": {"clipboard": True},
+        "clipboard_cleared": cleared,
+    }
+    require_shape(data, command="auth login")
+    return Envelope.success(provider=PROVIDER, data=data)
+
+
+def bookmarklet() -> Envelope:
+    """Print the ``javascript:`` bookmarklet that copies the ESPN cookies to the clipboard.
+
+    The URL is static and carries no secret: it reads ``document.cookie`` only
+    when clicked, in the browser, on an ESPN page. ``data`` is the URL and one
+    line of instructions.
+    """
+    from fantasy_sports.auth.clipboard import BOOKMARKLET, BOOKMARKLET_INSTRUCTIONS
+    from fantasy_sports.output.envelope import Envelope
+
+    data = {"bookmarklet": BOOKMARKLET, "instructions": BOOKMARKLET_INSTRUCTIONS}
+    require_shape(data, command="auth bookmarklet")
     return Envelope.success(provider=PROVIDER, data=data)
 
 

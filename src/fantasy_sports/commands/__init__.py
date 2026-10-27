@@ -212,6 +212,11 @@ class CommandSpec:
     stats map, a practice report) that would wrap a 100-column table past
     reading; JSON and CSV always carry everything."""
 
+    verbatim_fields: tuple[str, ...] = ()
+    """Top-level keys of an object ``data`` that ``--output table`` prints verbatim,
+    on their own unwrapped line below the table, instead of in a (folded) cell. For
+    a value a human copies out of the terminal, like the bookmarklet URL."""
+
     honors_no_raw: bool = True
     """Whether ``--no-raw`` strips ``data`` before this command's envelope is
     emitted. ``False`` for exactly one command: ``raw``, whose whole point is
@@ -460,7 +465,7 @@ register(
     CommandSpec(
         name="login",
         group="auth",
-        summary="Store ESPN cookies in the Keychain: prompted for, or imported via --from-browser.",
+        summary="Store ESPN cookies: prompted for, or via --from-browser / --from-clipboard.",
         handler="fantasy_sports.commands.auth:login",
         shape=DataShape.OBJECT,
         takes_league=False,
@@ -481,7 +486,27 @@ register(
                 "(e.g. `Default`, `Profile 1`).",
                 annotation=str | None,
             ),
+            Param(
+                name="from_clipboard",
+                help="Import espn_s2 and SWID from the clipboard (put there by the "
+                "`auth bookmarklet` bookmarklet), store them, then clear the clipboard. "
+                "Works in any browser. Mutually exclusive with --from-browser.",
+                annotation=bool,
+                default=False,
+            ),
         ),
+    )
+)
+
+register(
+    CommandSpec(
+        name="bookmarklet",
+        group="auth",
+        summary="Print the bookmarklet that copies your ESPN cookies for --from-clipboard.",
+        handler="fantasy_sports.commands.auth:bookmarklet",
+        shape=DataShape.OBJECT,
+        takes_league=False,
+        verbatim_fields=("bookmarklet",),
     )
 )
 
