@@ -100,6 +100,21 @@ Always Allow, and see
 grants. Because the browser also records when each cookie expires,
 `auth status` reports a real expiry instead of a guess.
 
+ESPN rotates `espn_s2` while your browser session lives on, so the stored copy
+can drift behind it. When ESPN refuses a request made with cookies from the
+Keychain or `config.toml`, and your browser holds a different `espn_s2` for the
+same account, fantasy-sports retries the request once with it and, if ESPN
+accepts it, saves it; the response says
+so in `warnings` and on stderr. It never does this for cookies from environment
+variables (cron, CI), and a second refusal reports
+`details.reimported_from_browser` so an agent knows a fresh pair was already
+tried. Turn it off with `FANTASY_SPORTS_NO_BROWSER_REIMPORT=1` or:
+
+```toml
+[auth]
+auto_reimport = false
+```
+
 These are session credentials. Anyone holding them can act as you on ESPN,
 so treat them like a password: never paste them into an issue or a shell
 argument, and if you think they have leaked, log out of ESPN to invalidate
@@ -284,31 +299,31 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     }
@@ -319,6 +334,7 @@ fantasy-sports standings
     "…": "… 8 more entries"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -376,6 +392,9 @@ fantasy-sports standings
 - **`raw_omitted`.** Whether `--no-raw` stripped the `raw` passthrough key
   from every normalized object in this response; `false` means nothing was
   suppressed here, not that `raw` is necessarily present.
+- **`warnings`.** Notices about a run that succeeded, as plain sentences with no
+  credential in them; `[]` when there are none. Today the one case is a browser
+  cookie re-import (see step 2): the same sentence is printed to stderr.
 - **CSV cells are formula-guarded.** `--output csv` carries only `data`, and
   any string cell that begins with `=`, `+`, `-`, `@`, a tab or a carriage
   return is prefixed with a single quote so a spreadsheet shows it as text
@@ -402,12 +421,13 @@ fantasy-sports box-scores --week 1
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "NOT_AVAILABLE",

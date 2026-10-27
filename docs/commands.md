@@ -112,31 +112,31 @@ fantasy-sports standings --league public --no-raw
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:28Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:16Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 2,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 2,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 2,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 2,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     }
@@ -146,6 +146,7 @@ fantasy-sports standings --league public --no-raw
     "…": "… 9 more entries"
   },
   "raw_omitted": true,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -182,12 +183,13 @@ fantasy-sports league info --season 2019
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "LEAGUE_NOT_FOUND",
@@ -222,31 +224,31 @@ fantasy-sports standings --fresh --no-raw
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:29Z",
-  "data_as_of": "2026-09-12T19:31:28Z",
+  "generated_at": "2026-10-27T17:24:17Z",
+  "data_as_of": "2026-10-27T17:24:17Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:28Z",
+      "fetched_at": "2026-10-27T17:24:17Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:28Z",
+      "fetched_at": "2026-10-27T17:24:17Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:28Z",
+      "fetched_at": "2026-10-27T17:24:17Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:29Z",
+      "fetched_at": "2026-10-27T17:24:17Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -256,6 +258,7 @@ fantasy-sports standings --fresh --no-raw
     "…": "… 9 more entries"
   },
   "raw_omitted": true,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -295,31 +298,31 @@ fantasy-sports standings --no-cache --no-raw
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:29Z",
-  "data_as_of": "2026-09-12T19:31:29Z",
-  "data_age_seconds": 0,
+  "generated_at": "2026-10-27T17:24:19Z",
+  "data_as_of": "2026-10-27T17:24:18Z",
+  "data_age_seconds": 1,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:29Z",
-      "age_seconds": 0,
+      "fetched_at": "2026-10-27T17:24:18Z",
+      "age_seconds": 1,
       "cached": false
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:29Z",
+      "fetched_at": "2026-10-27T17:24:18Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:29Z",
+      "fetched_at": "2026-10-27T17:24:18Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:29Z",
+      "fetched_at": "2026-10-27T17:24:19Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -329,6 +332,7 @@ fantasy-sports standings --no-cache --no-raw
     "…": "… 9 more entries"
   },
   "raw_omitted": true,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -389,7 +393,7 @@ fantasy-sports standings --output table
 # ESPN public league 1234, season 2018 (live). Exit 0, stdout:
 ```
 ```text
-espn · league 1234 · season 2018 · generated 2026-09-12T19:31:26Z · data age 0s
+espn · league 1234 · season 2018 · generated 2026-10-27T17:24:14Z · data age 0s
 provider   provider…   name        owner_n…   wins   losses   ties   points_f…   points_…   standing
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 espn       8           Team 8      []         9      4        0      1402.720…   1191.54    1       
@@ -420,7 +424,7 @@ fantasy-sports league info --output table
 # ESPN public league 1234, season 2018 (live). Exit 0, stdout:
 ```
 ```text
-espn · league 1234 · season 2018 · generated 2026-09-12T19:31:26Z · data age 0s
+espn · league 1234 · season 2018 · generated 2026-10-27T17:24:14Z · data age 0s
 field          value                                                                          
 ──────────────────────────────────────────────────────────────────────────────────────────────
 provider       espn                                                                           
@@ -483,31 +487,31 @@ fantasy-sports teams
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     }
@@ -518,6 +522,7 @@ fantasy-sports teams
     "…": "… 8 more entries"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -578,31 +583,31 @@ fantasy-sports teams --no-raw
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     }
@@ -613,6 +618,7 @@ fantasy-sports teams --no-raw
     "…": "… 8 more entries"
   },
   "raw_omitted": true,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -723,31 +729,31 @@ fantasy-sports league info
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -756,6 +762,7 @@ fantasy-sports league info
     "name": "Arizona 1234"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "provider": "espn",
     "provider_id": "1234",
@@ -816,31 +823,31 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     }
@@ -851,6 +858,7 @@ fantasy-sports standings
     "…": "… 8 more entries"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -922,37 +930,38 @@ fantasy-sports roster --team 1
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:14Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1052,43 +1061,44 @@ fantasy-sports roster --team 'FANTASY GOD' --week 1 --no-raw
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:26Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:15Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 1,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mRoster",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:15Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": true,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1174,43 +1184,44 @@ fantasy-sports matchups --week 1
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:27Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:15Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 1,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mMatchupScore",
-      "fetched_at": "2026-09-12T19:31:27Z",
+      "fetched_at": "2026-10-27T17:24:15Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1285,49 +1296,50 @@ fantasy-sports box-scores --week 1
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-09-12T19:31:30Z",
-  "data_as_of": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mMatchupScore+mScoreboard",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mPositionalRatings",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1460,49 +1472,50 @@ fantasy-sports free-agents --pos WR --limit 5 --week 2
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-09-12T19:31:30Z",
-  "data_as_of": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "kona_player_info",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "mPositionalRatings",
-      "fetched_at": "2026-09-12T19:31:30Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1574,43 +1587,44 @@ fantasy-sports transactions --limit 5
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:27Z",
-  "data_as_of": "2026-09-12T19:31:25Z",
+  "generated_at": "2026-10-27T17:24:15Z",
+  "data_as_of": "2026-10-27T17:24:14Z",
   "data_age_seconds": 1,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-09-12T19:31:25Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-09-12T19:31:26Z",
+      "fetched_at": "2026-10-27T17:24:14Z",
       "age_seconds": 1,
       "cached": true
     },
     {
       "name": "mTransactions2",
-      "fetched_at": "2026-09-12T19:31:27Z",
+      "fetched_at": "2026-10-27T17:24:15Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1686,19 +1700,20 @@ fantasy-sports raw --view mSettings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:27Z",
-  "data_as_of": "2026-09-12T19:31:27Z",
+  "generated_at": "2026-10-27T17:24:16Z",
+  "data_as_of": "2026-10-27T17:24:16Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mSettings",
-      "fetched_at": "2026-09-12T19:31:27Z",
+      "fetched_at": "2026-10-27T17:24:16Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "mSettings": {
       "view": "mSettings",
@@ -1762,19 +1777,20 @@ fantasy-sports raw --view kona_player_info
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:27Z",
-  "data_as_of": "2026-09-12T19:31:27Z",
+  "generated_at": "2026-10-27T17:24:16Z",
+  "data_as_of": "2026-10-27T17:24:16Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "kona_player_info",
-      "fetched_at": "2026-09-12T19:31:27Z",
+      "fetched_at": "2026-10-27T17:24:16Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "kona_player_info": {
       "view": "kona_player_info",
@@ -1804,19 +1820,20 @@ fantasy-sports raw --view kona_player_info --filter '{"players":{"limit":2,"sort
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:27Z",
-  "data_as_of": "2026-09-12T19:31:27Z",
+  "generated_at": "2026-10-27T17:24:16Z",
+  "data_as_of": "2026-10-27T17:24:16Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "kona_player_info",
-      "fetched_at": "2026-09-12T19:31:27Z",
+      "fetched_at": "2026-10-27T17:24:16Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "kona_player_info": {
       "view": "kona_player_info",
@@ -1882,13 +1899,13 @@ fantasy-sports leagues discover
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:14:48Z",
-  "data_as_of": "2026-10-27T15:14:48Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fan.api:fans",
-      "fetched_at": "2026-10-27T15:14:48Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -1898,6 +1915,7 @@ fantasy-sports leagues discover
     "[1].name": "Synthetic Ice"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -1946,13 +1964,13 @@ fantasy-sports leagues discover --config-snippet
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:14:48Z",
-  "data_as_of": "2026-10-27T15:14:48Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fan.api:fans",
-      "fetched_at": "2026-10-27T15:14:48Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -1962,6 +1980,7 @@ fantasy-sports leagues discover --config-snippet
     "[1].name": "Synthetic Ice"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -2007,7 +2026,7 @@ fantasy-sports leagues discover --output table
 # no league, synthetic fan.api account listing (replayed). Exit 0, stdout:
 ```
 ```text
-espn · generated 2026-10-27T15:14:48Z · data age 0s
+espn · generated 2026-10-27T17:24:20Z · data age 0s
 league_id   season   sport      name                 team_id   is_manager
 ─────────────────────────────────────────────────────────────────────────
 99          2026     football   Synthetic Gridiron   3         true      
@@ -2036,7 +2055,7 @@ data, not a failure: `doctor` exits 0 and never raises.
 <!-- sample: doctor -->
 ```bash
 fantasy-sports doctor
-# ESPN public league 1234, season 2018 (live). Exit 0, stdout:
+# ESPN public league 1234, season 2018 (live). Exit 0, stdout, trimmed with …:
 ```
 ```json
 {
@@ -2044,12 +2063,13 @@ fantasy-sports doctor
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:28Z",
+  "generated_at": "2026-10-27T17:24:16Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "status": "warn",
     "ok": false,
@@ -2088,27 +2108,31 @@ fantasy-sports doctor
         "status": "ok",
         "summary": "ESPN credentials are configured.",
         "details": {
-          "generated_at": "2026-09-12T19:31:27.898284Z",
+          "generated_at": "2026-10-27T17:24:16.525365Z",
           "complete": true,
           "credentials": [
             {
               "name": "espn_s2",
               "present": true,
+              "required": true,
               "source": "env",
               "age_days": null,
               "age_basis": "not-tracked:env",
               "stored_at": null,
               "last_success_at": null,
+              "expires_at": null,
               "freshness": "unknown"
             },
             {
               "name": "swid",
               "present": true,
+              "required": true,
               "source": "env",
               "age_days": null,
               "age_basis": "not-tracked:env",
               "stored_at": null,
               "last_success_at": null,
+              "expires_at": null,
               "freshness": "unknown"
             }
           ],
@@ -2116,9 +2140,11 @@ fantasy-sports doctor
             "days": 30.0,
             "source": "default",
             "verified": false,
-            "note": "Unverified heuristic, not a known ESPN cookie lifetime. ESPN publishes no expiry, and no library source or community report reviewed states a concrete one. Override with FANTASY_SPORTS_STALE_AFTER_DAYS."
+            "note": "Unverified heuristic, not a known ESPN cookie lifetime. ESPN publishes no expiry, and no library source or community report reviewed states a concrete one. Override with FANTASY_SPORTS_STALE_AFTER_DAYS.",
+            "expiry_warn_days": 7
           },
-          "warnings": []
+          "warnings": [],
+          "sources_match": true
         }
       },
       {
@@ -2169,27 +2195,7 @@ fantasy-sports doctor
         "summary": "Could not reach the health manifest (offline, GitHub unreachable, or not yet published).",
         "details": {}
       },
-      {
-        "name": "leagues_reachable",
-        "status": "skipped",
-        "summary": "1 league(s) configured; pass --live to check reachability.",
-        "details": {
-          "leagues": [
-            "public"
-          ]
-        }
-      },
-      {
-        "name": "fantasypros",
-        "status": "skipped",
-        "summary": "No FantasyPros API key configured (optional). Set FANTASY_SPORTS_FANTASYPROS_API_KEY or run `fantasy-sports auth login` to enable expert rankings.",
-        "details": {
-          "present": false,
-          "source": null,
-          "tier": null,
-          "probed": false
-        }
-      }
+      "… 2 more items"
     ]
   },
   "error": null
@@ -2215,14 +2221,15 @@ fantasy-sports auth status
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:00:17Z",
+  "generated_at": "2026-10-27T17:24:16Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
-    "generated_at": "2026-10-27T15:00:17.428068Z",
+    "generated_at": "2026-10-27T17:24:16.677974Z",
     "complete": true,
     "credentials": [
       {
@@ -2290,14 +2297,15 @@ fantasy-sports auth status
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:00:17Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
-    "generated_at": "2026-10-27T15:00:17.562626Z",
+    "generated_at": "2026-10-27T17:24:20.046344Z",
     "complete": false,
     "credentials": [
       {
@@ -2378,12 +2386,13 @@ fantasy-sports auth login
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-16T02:48:00Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "stored": [
       "espn_s2",
@@ -2456,14 +2465,15 @@ fantasy-sports auth status
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:00:17Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
-    "generated_at": "2026-10-27T15:00:17.569852Z",
+    "generated_at": "2026-10-27T17:24:20.052841Z",
     "complete": true,
     "credentials": [
       {
@@ -2473,7 +2483,7 @@ fantasy-sports auth status
         "source": "keychain",
         "age_days": 0.0,
         "age_basis": "stored_at",
-        "stored_at": "2026-10-27T15:00:17.565625Z",
+        "stored_at": "2026-10-27T17:24:20.049672Z",
         "last_success_at": null,
         "expires_at": null,
         "freshness": "fresh"
@@ -2497,7 +2507,7 @@ fantasy-sports auth status
         "source": "keychain",
         "age_days": 0.0,
         "age_basis": "stored_at",
-        "stored_at": "2026-10-27T15:00:17.565625Z",
+        "stored_at": "2026-10-27T17:24:20.049672Z",
         "last_success_at": null,
         "expires_at": null,
         "freshness": "fresh"
@@ -2559,12 +2569,13 @@ fantasy-sports auth login --from-clipboard
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:24:37Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "stored": [
       "espn_s2",
@@ -2595,12 +2606,13 @@ fantasy-sports auth login --from-clipboard
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:24:37Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "AUTH_MISSING",
@@ -2643,12 +2655,13 @@ fantasy-sports auth bookmarklet
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-27T15:58:34Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "bookmarklet": "javascript:(function(){var want=['espn_s2','SWID'],found=document.cookie.split(';').map(function(c){return c.trim()}).filter(function(c){return want.indexOf(c.split('=')[0])>-1}),has=function(n){return found.some(function(c){return c.split('=')[0]===n})};if(!has('espn_s2')||!has('SWID')){alert(!has('espn_s2')&&!has('SWID')?'Not logged in: ESPN cookies espn_s2 and SWID not found. Log in at fantasy.espn.com and try again.':has('SWID')?'Found SWID but not espn_s2. This browser hides espn_s2 from page scripts (HttpOnly). Use fantasy-sports auth login --from-browser, or copy espn_s2 from DevTools > Application > Cookies.':'Found espn_s2 but not SWID. Log in at fantasy.espn.com and try again.');return}navigator.clipboard.writeText(found.join('; ')).then(function(){alert('ESPN cookies copied. Now run: fantasy-sports auth login --from-clipboard')},function(){alert('Could not write to the clipboard.')})})();",
     "instructions": "Create a browser bookmark whose URL is the bookmarklet, open fantasy.espn.com while logged in, click it, then run `fantasy-sports auth login --from-clipboard`."
@@ -2679,12 +2692,13 @@ fantasy-sports auth logout
   "provider": "espn",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-16T02:48:00Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "removed": [
       "espn_s2",
@@ -2791,37 +2805,38 @@ fantasy-sports lineup set --team 1 --set 2002=BE --set 'Katherine Johnson=WR'
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T06:36:50Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3004610,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "lineup",
@@ -2879,43 +2894,44 @@ fantasy-sports lineup set --team 1 --set 2002=BE --set 'Katherine Johnson=WR' --
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T06:36:50Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3004610,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mNav",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "lineup",
@@ -3037,37 +3053,38 @@ fantasy-sports add --team 1 --player 'Barbara Liskov' --drop 'Katherine Johnson'
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:03:29Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3006209,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "add",
@@ -3134,55 +3151,56 @@ fantasy-sports add --team 1 --player 'Barbara Liskov' --drop 'Katherine Johnson'
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:03:29Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3006209,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "kona_player_info",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mPositionalRatings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mNav",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "add",
@@ -3255,43 +3273,44 @@ fantasy-sports drop --team 1 --player 2003 --dry-run
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:03:29Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3006209,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mNav",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006209,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "drop",
@@ -3387,55 +3406,56 @@ fantasy-sports claim --team 1 --player 'Radia Perlman' --bid 7 --dry-run
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:13:19Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3006799,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "kona_player_info",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mPositionalRatings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mNav",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3006799,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "claim",
@@ -3518,43 +3538,44 @@ fantasy-sports claims --team 1
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:34:31Z",
-  "data_as_of": "2026-10-15T07:34:31Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-10-15T07:34:31Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-10-15T07:34:31Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-10-15T07:34:31Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-10-15T07:34:31Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mPendingTransactions",
-      "fetched_at": "2026-10-15T07:34:31Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -3638,43 +3659,44 @@ fantasy-sports cancel-claim --team 1 --id 5d0c6e2a-7f41-4b9e-a3c8-1e6f2b9d4a70
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T07:34:31Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3008071,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3008071,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3008071,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3008071,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3008071,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mPendingTransactions",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3008071,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "cancel",
@@ -3771,37 +3793,37 @@ fantasy-sports trades --team 1
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-16T07:12:11Z",
-  "data_as_of": "2026-10-16T07:12:11Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
-      "fetched_at": "2026-10-16T07:12:11Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "players_wl",
-      "fetched_at": "2026-10-16T07:12:11Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "proTeamSchedules_wl",
-      "fetched_at": "2026-10-16T07:12:11Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mDraftDetail",
-      "fetched_at": "2026-10-16T07:12:11Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "mPendingTransactions",
-      "fetched_at": "2026-10-16T07:12:11Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     }
@@ -3810,6 +3832,7 @@ fantasy-sports trades --team 1
     "[0].comment": ""
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "provider": "espn",
@@ -3913,43 +3936,44 @@ fantasy-sports trade propose --team 1 --with 2 --give 'Grace Hopper' --get 'Alan
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-16T07:12:11Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3093131,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mNav",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "trade",
@@ -4016,43 +4040,44 @@ fantasy-sports trade propose --team 1 --with 2 --give 'Grace Hopper' --get 'Alan
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-16T07:12:11Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3093131,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mPendingTransactions",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "trade",
@@ -4155,43 +4180,44 @@ fantasy-sports trade cancel --team 1 --id 5d0c6e2a-7f41-4b9e-a3c8-1e6f2b9d4a70
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-16T07:12:11Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3093131,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mPendingTransactions",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3093131,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "trade_cancel",
@@ -4277,12 +4303,13 @@ fantasy-sports journal list
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T05:53:06Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "id": "c47d19ab-52e0-4f3c-8a16-9e0b3d7a2c55",
@@ -4424,12 +4451,13 @@ fantasy-sports journal digest --since 2026-09-12T00:00:00Z --irreversible
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T06:17:37Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "id": "c47d19ab-52e0-4f3c-8a16-9e0b3d7a2c55",
@@ -4516,12 +4544,13 @@ fantasy-sports journal show --id 0f8a9c2e-6b1d-4e57-9a3c-2d7b5e1f4a60
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T05:53:06Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "id": "0f8a9c2e-6b1d-4e57-9a3c-2d7b5e1f4a60",
     "recorded_at": "2026-09-12T18:29:24.880Z",
@@ -4619,37 +4648,38 @@ fantasy-sports journal reverse --id 6e1f0b3a-2c4d-4e8f-9a1b-3c5d7e9f1a2b
   "provider": "espn",
   "league_id": "99",
   "season": 2026,
-  "generated_at": "2026-10-15T06:36:50Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": "2026-09-10T12:00:00Z",
-  "data_age_seconds": 3004610,
+  "data_age_seconds": 4080260,
   "sources": [
     {
       "name": "mTeam+mRoster+mMatchup+mSettings+mStandings",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "players_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "proTeamSchedules_wl",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     },
     {
       "name": "mDraftDetail",
       "fetched_at": "2026-09-10T12:00:00Z",
-      "age_seconds": 3004610,
+      "age_seconds": 4080260,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": {
     "team_id": "1",
     "kind": "reverse",
@@ -4743,25 +4773,26 @@ fantasy-sports experts rankings --pos RB
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     },
     {
       "name": "fantasypros:consensus-rankings",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 22968,
@@ -4825,25 +4856,26 @@ fantasy-sports experts rankings --pos RB --week 5
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:consensus-rankings",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 22968,
@@ -4885,25 +4917,26 @@ fantasy-sports experts rankings --pos RB --ros
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:consensus-rankings",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 22968,
@@ -4943,7 +4976,7 @@ fantasy-sports experts rankings --pos RB --output table
 # no league, FantasyPros recording of 2026-10-20 (replayed). Exit 0, stdout:
 ```
 ```text
-fantasypros · season 2026 · generated 2026-10-20T16:09:09Z · data age 0s
+fantasypros · season 2026 · generated 2026-10-27T17:24:20Z · data age 0s
 rank_ecr   name                 pro_team   pos_rank   rank_ave   opponent   owned_espn_pct   espn_id
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 1          Jahmyr Gibbs         DET        RB1        1.17       vs. GB     99.8             4429795
@@ -4996,25 +5029,26 @@ fantasy-sports experts projections --pos RB
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:projections",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 22968,
@@ -5094,25 +5128,26 @@ fantasy-sports experts projections --player 4430807
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:projections",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 23133,
@@ -5161,12 +5196,13 @@ fantasy-sports experts projections --player 'Josh A'
   "provider": "fantasypros",
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "CONFIG_INVALID",
@@ -5246,25 +5282,26 @@ fantasy-sports experts injuries
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:injuries",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
   ],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "fp_id": 19784,
@@ -5367,19 +5404,19 @@ fantasy-sports experts news
   "provider": "fantasypros",
   "league_id": null,
   "season": 2026,
-  "generated_at": "2026-10-20T16:09:09Z",
-  "data_as_of": "2026-10-20T16:09:09Z",
+  "generated_at": "2026-10-27T17:24:20Z",
+  "data_as_of": "2026-10-27T17:24:20Z",
   "data_age_seconds": 0,
   "sources": [
     {
       "name": "fantasypros:players",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": true
     },
     {
       "name": "fantasypros:news",
-      "fetched_at": "2026-10-20T16:09:09Z",
+      "fetched_at": "2026-10-27T17:24:20Z",
       "age_seconds": 0,
       "cached": false
     }
@@ -5390,6 +5427,7 @@ fantasy-sports experts news
     "…": "… 16 more entries"
   },
   "raw_omitted": false,
+  "warnings": [],
   "data": [
     {
       "id": 614924,
@@ -5440,7 +5478,7 @@ fantasy-sports experts news --output table
 # no league, FantasyPros recording of 2026-10-20 (replayed). Exit 0, stdout:
 ```
 ```text
-fantasypros · season 2026 · generated 2026-10-20T16:09:09Z · data age 0s
+fantasypros · season 2026 · generated 2026-10-27T17:24:20Z · data age 0s
 created_at             player.name                team   title                                      
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 2026-10-20T15:28:51Z   Zane Gonzalez              FA     Zane Gonzalez brought in by Dolphins       
@@ -5508,12 +5546,13 @@ fantasy-sports standings
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "AUTH_MISSING",
@@ -5549,12 +5588,13 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "AUTH_EXPIRED",
@@ -5592,12 +5632,13 @@ fantasy-sports standings --league nope
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "LEAGUE_NOT_FOUND",
@@ -5625,12 +5666,13 @@ fantasy-sports standings
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "LEAGUE_NOT_FOUND",
@@ -5659,12 +5701,13 @@ fantasy-sports roster --team Nobody
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "LEAGUE_NOT_FOUND",
@@ -5695,12 +5738,13 @@ fantasy-sports roster --team Team
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "LEAGUE_NOT_FOUND",
@@ -5742,12 +5786,13 @@ fantasy-sports standings
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "CONFIG_INVALID",
@@ -5777,12 +5822,13 @@ fantasy-sports free-agents --pos PUNTER --week 2
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "CONFIG_INVALID",
@@ -5817,12 +5863,13 @@ fantasy-sports drop --team 1 --player 'Katherine Johnson'
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T07:03:29Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "CONFIG_INVALID",
@@ -5859,12 +5906,13 @@ fantasy-sports raw --view mSettings --filter not-json
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "CONFIG_INVALID",
@@ -5899,12 +5947,13 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "PROVIDER_UNAVAILABLE",
@@ -5939,12 +5988,13 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "RATE_LIMITED",
@@ -5982,12 +6032,13 @@ fantasy-sports standings
   "provider": "espn",
   "league_id": "1234",
   "season": 2018,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "SCHEMA_DRIFT",
@@ -6026,12 +6077,13 @@ fantasy-sports box-scores --week 1
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "NOT_AVAILABLE",
@@ -6060,12 +6112,13 @@ fantasy-sports free-agents --pos RB --limit 5
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-09-12T19:31:30Z",
+  "generated_at": "2026-10-27T17:24:19Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "NOT_AVAILABLE",
@@ -6108,12 +6161,13 @@ fantasy-sports lineup set --team 1 --set 2002=BE --set 'Katherine Johnson=WR'
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T06:36:50Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "WRITE_REJECTED",
@@ -6154,12 +6208,13 @@ fantasy-sports lineup set --team 1 --set 2002=BE --set 'Katherine Johnson=WR'
   "provider": null,
   "league_id": null,
   "season": null,
-  "generated_at": "2026-10-15T06:36:50Z",
+  "generated_at": "2026-10-27T17:24:20Z",
   "data_as_of": null,
   "data_age_seconds": null,
   "sources": [],
   "untrusted": {},
   "raw_omitted": false,
+  "warnings": [],
   "data": null,
   "error": {
     "code": "WRITE_DIVERGED",
